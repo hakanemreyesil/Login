@@ -4,7 +4,7 @@ import (
 	"html/template"
 	"net/http"
 
-	"github.com/julienschmidt/httprouter"
+	"github.com/gorilla/mux"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 )
@@ -15,21 +15,20 @@ type User struct {
 }
 
 func main() {
-
-	r := httprouter.New()
-	r.GET("/", Anasayfa)
-	r.POST("/login", Login)
+	router := mux.NewRouter().StrictSlash(true)
+	router.HandleFunc("/", HomePage)
+	router.HandleFunc("/login", Login).Methods("POST")
 	http.Handle("/", http.StripPrefix("/", http.FileServer(http.Dir("views"))))
-	http.ListenAndServe(":8080", r)
+	http.ListenAndServe(":8080", router)
 
 }
-func Anasayfa(w http.ResponseWriter, r *http.Request, params httprouter.Params) {
+func HomePage(w http.ResponseWriter, r *http.Request) {
 	view, _ := template.ParseFiles("views/index.html")
 
 	view.Execute(w, nil)
 }
 
-func Login(w http.ResponseWriter, r *http.Request, params httprouter.Params) {
+func Login(w http.ResponseWriter, r *http.Request) {
 	dsn := "root:root@tcp(127.0.0.1:3306)/gorm?charset=utf8mb4&parseTime=True&loc=Local"
 	db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
 	if err != nil {
