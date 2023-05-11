@@ -17,6 +17,5 @@ Open a web browser and go to http://localhost:8080 to access the login page.
 
 # Login
 On the login page, enter your username and password and click the "Log In" button. The app will check the entered information against the users table in the MySQL database. If the information is correct, you will be redirected to a welcome page that displays your username. If the information is incorrect, you will see an error message.
-# ![image](https://user-images.githubusercontent.com/59126857/235627313-35ec8ea6-8623-4f01-adb0-628de7e35625.png ) ![image](https://user-images.githubusercontent.com/59126857/235627369-e17e3e01-ab7a-4a54-8456-cae7326a4212.png ) ![image](https://user-images.githubusercontent.com/59126857/235627661-b8e1c785-1bac-40e9-a352-2861d1c3ba93.png )
 
 # ![afterlogin](https://github.com/hakanemreyesil/Login/assets/59126857/30c0eceb-8c76-40c0-8bf2-0b7872bb2539) ![login](https://github.com/hakanemreyesil/Login/assets/59126857/36cdcd8f-0492-43d0-8501-ad78fc6eeb69) ![Error](https://github.com/hakanemreyesil/Login/assets/59126857/8aa90c70-d38c-4be1-b025-71ab60bb91f9)
