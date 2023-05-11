@@ -4,7 +4,7 @@ This is a simple web application that allows users to log in using a username an
 
 The app uses the httprouter library to handle GET and POST requests, and the html/template library to render HTML templates.
 
-#Installation and Usage
+# Installation and Usage
 To run this app, you need to have Go and MAMP installed on your machine.
 
 Clone this repository to your local machine.
@@ -15,7 +15,7 @@ Open a terminal window and navigate to the cloned repository folder.
 Run the command go run main.go to start the app.
 Open a web browser and go to http://localhost:8080 to access the login page.
 
-#Login
+# Login
 On the login page, enter your username and password and click the "Log In" button. The app will check the entered information against the users table in the MySQL database. If the information is correct, you will be redirected to a welcome page that displays your username. If the information is incorrect, you will see an error message.
 # ![image](https://user-images.githubusercontent.com/59126857/235627313-35ec8ea6-8623-4f01-adb0-628de7e35625.png)
 # ![image](https://user-images.githubusercontent.com/59126857/235627369-e17e3e01-ab7a-4a54-8456-cae7326a4212.png)
