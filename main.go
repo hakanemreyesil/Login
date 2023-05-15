@@ -20,8 +20,8 @@ type User struct {
 }
 
 func authenticateUser(username, password string) bool {
-	// Burada, kullanıcı kimlik doğrulama işlemlerini gerçekleştirin.
-	// Örneğin, kullanıcı adı ve şifreyi bir veritabanında kontrol edebilirsiniz.
+	// perform user authentication
+	// The username and password are checked in a database
 	dsn := "root:root@tcp(127.0.0.1:3306)/gorm?charset=utf8mb4&parseTime=True&loc=Local"
 	db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
 	if err != nil {
@@ -33,16 +33,16 @@ func authenticateUser(username, password string) bool {
 }
 
 func generateJWT(username string) (string, error) {
-	// Token'ın geçerlilik süresi
+	// Token validity time
 	expirationTime := time.Now().Add(30 * time.Minute)
 
-	// JWT içeriği ve ayarları
+	// JWT content and settings
 	claims := &jwt.StandardClaims{
 		ExpiresAt: expirationTime.Unix(),
 		Subject:   username,
 	}
 
-	// JWT oluşturma
+	// JWT creat
 	token := jwt.NewWithClaims(jwt.SigningMethodHS256, claims)
 	signedToken, err := token.SignedString(jwtSecret)
 	if err != nil {
@@ -68,19 +68,18 @@ func HomePage(w http.ResponseWriter, r *http.Request) {
 func Login(w http.ResponseWriter, r *http.Request) {
 	username := r.FormValue("username")
 	password := r.FormValue("password")
-
+	//Are the incoming username and password correct?
 	if authenticateUser(username, password) {
+		//Jwt create
 		token, err := generateJWT(username)
 		if err != nil {
 			w.WriteHeader(http.StatusInternalServerError)
 			fmt.Fprintf(w, "JWT oluşturulamadı.")
 			return
 		}
-		w.Header().Set("Authorization", "Bearer "+token)
-		w.WriteHeader(http.StatusOK)
 		response := struct {
-			Token string `json:"token"`
-			User  User   `json:"user"`
+			Token string
+			User  User
 		}{
 			Token: token,
 			User: User{
