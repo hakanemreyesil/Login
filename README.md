@@ -1,8 +1,6 @@
 
-# Login with Golang and MAMP (MySQL)
-This is a simple web application that allows users to log in using a username and password. The login information is checked against a MySQL database hosted in MAMP.
-
-The app uses the httprouter library to handle GET and POST requests, and the html/template library to render HTML templates.
+# Login with Golang, MAMP (MySQL), and JWT Authentication
+This is a simple web application that allows users to log in using a username and password. The login information is checked against a MySQL database hosted in MAMP. Upon successful login, a JSON Web Token (JWT) is generated and returned to the frontend for secure authentication.
 
 # Installation and Usage
 To run this app, you need to have Go and MAMP installed on your machine.
