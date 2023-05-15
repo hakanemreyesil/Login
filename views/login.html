@@ -7,9 +7,9 @@
 </head>
 
 <body>
-    <p>Hoşgeldin, {{.Username}}!</p>
-    <p>Şifren : {{.Password}}</p>
+    <p>Hoşgeldin, {{ .User.Username }}!</p>
+    <p>Şifren : {{ .User.Password }}</p>
+    <p>Token: {{.Token}}</p>
 </body>
 
 </html>
-
