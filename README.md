@@ -16,4 +16,7 @@ Open a web browser and go to http://localhost:8080 to access the login page.
 # Login
 On the login page, enter your username and password and click the "Log In" button. The app will check the entered information against the users table in the MySQL database. If the information is correct, you will be redirected to a welcome page that displays your username. If the information is incorrect, you will see an error message.
 
+# Linter 
+ Linter is a tool for detecting style errors, potential errors, and violations of generally accepted coding conventions in the code you write. Linters play an important role in improving the quality of the code you write and building a more robust code base.
+
 # ![image](https://github.com/hakanemreyesil/Login/assets/59126857/8aa1845c-ddf8-4dc7-83b1-66b9292931c4) ![image](https://github.com/hakanemreyesil/Login/assets/59126857/19d2d83d-ea6d-4ae4-91dc-f3723a2a25b2) ![image](https://github.com/hakanemreyesil/Login/assets/59126857/6e70ee09-9521-4a7c-a10c-885b41bff594)

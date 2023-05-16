@@ -1,0 +1,3 @@
+run_on_save = true
+verbose = true
+linters = "golint,gosec,govet,staticcheck"

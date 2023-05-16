@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"html/template"
+	"log"
 	"net/http"
 	"time"
 
@@ -57,12 +58,18 @@ func main() {
 	router.HandleFunc("/", HomePage)
 	router.HandleFunc("/login", Login).Methods("POST")
 	http.Handle("/", http.StripPrefix("/", http.FileServer(http.Dir("views"))))
-	http.ListenAndServe(":8080", router)
+	err := http.ListenAndServe(":8080", router)
+	if err != nil {
+		log.Fatal(err)
+	}
 }
 
 func HomePage(w http.ResponseWriter, r *http.Request) {
 	view, _ := template.ParseFiles("views/index.html")
-	view.Execute(w, nil)
+	err := view.Execute(w, nil)
+	if err != nil {
+		log.Fatal(err)
+	}
 }
 
 func Login(w http.ResponseWriter, r *http.Request) {
@@ -88,7 +95,12 @@ func Login(w http.ResponseWriter, r *http.Request) {
 			},
 		}
 		view, _ := template.ParseFiles("views/login.html")
-		view.Execute(w, response)
+		err = view.Execute(w, response)
+		if err != nil {
+			log.Println(err)
+			http.Error(w, "Internal Server Error", http.StatusInternalServerError)
+			return
+		}
 
 	} else {
 		w.WriteHeader(http.StatusUnauthorized)
