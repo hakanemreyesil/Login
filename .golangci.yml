@@ -1,0 +1,6 @@
+linters-settings:
+  enable:
+    - golint
+    - gosec
+    - govet
+    - staticcheck
