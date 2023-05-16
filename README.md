@@ -19,4 +19,4 @@ On the login page, enter your username and password and click the "Log In" butto
 # Linter 
  Linter is a tool for detecting style errors, potential errors, and violations of generally accepted coding conventions in the code you write. Linters play an important role in improving the quality of the code you write and building a more robust code base.
 
-# ![image](https://github.com/hakanemreyesil/Login/assets/59126857/8aa1845c-ddf8-4dc7-83b1-66b9292931c4) ![image](https://github.com/hakanemreyesil/Login/assets/59126857/19d2d83d-ea6d-4ae4-91dc-f3723a2a25b2) ![image](https://github.com/hakanemreyesil/Login/assets/59126857/6e70ee09-9521-4a7c-a10c-885b41bff594)
+# ![image](https://github.com/hakanemreyesil/Login/assets/59126857/71a7cd38-3b51-4228-9601-ecf089fbccdc) ![image](https://github.com/hakanemreyesil/Login/assets/59126857/82c00f4c-f401-471b-a327-aba54ce0154f) ![image](https://github.com/hakanemreyesil/Login/assets/59126857/4fb5f6e4-8d9b-4a06-a608-d767f5e90c6c)
