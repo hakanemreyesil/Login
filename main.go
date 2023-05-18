@@ -87,6 +87,7 @@ func Login(w http.ResponseWriter, r *http.Request) {
 		response := struct {
 			Token string
 			User  User
+			Cmd   []string
 		}{
 			Token: token,
 			User: User{
